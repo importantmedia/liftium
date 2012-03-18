@@ -1670,6 +1670,8 @@ Liftium.recordEvents = function(slotname){
 
 
 Liftium.reportError = function (msg, type) {
+    // Disabled
+    return;
   // wrapped in a try catch block because if this function is reporting an error,
   // all hell breaks loose
   try { 
