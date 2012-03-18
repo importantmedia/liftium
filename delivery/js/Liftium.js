@@ -25,11 +25,11 @@ var LiftiumOptions = LiftiumOptions || {};
 if (! window.Liftium ) { // No need to do this twice
 
 var Liftium = {
-	baseUrl		: LiftiumOptions.baseUrl || "http://delivery.liftium.com/",
+	baseUrl		: LiftiumOptions.baseUrl || "http://delivery.importantmedia.org/",
 	chain		: [],
 	currents 	: [],
 	eventsTracked	: 0,
-	geoUrl		: LiftiumOptions.geoUrl || "http://geoip.liftium.com/",
+	geoUrl		: LiftiumOptions.geoUrl || "http://geoip.huddler.com/",
 	loadDelay	: 100,
 	maxHops		: LiftiumOptions.maxHops || 5,
 	slotHops	: [],
