@@ -2414,7 +2414,7 @@ XDM.send = function (destWin, method, args){
 
 
 XDM.getDestinationDomain = function(destWin){
-	if (destWin == top){
+	if (destWin == window.parent){
 		// Pull domain from referrer. 
 		if (document.referrer.toString() !== ''){
 			var m = document.referrer.toString().match(/https*:\/\/([^\/]+)/);
@@ -2533,14 +2533,18 @@ XDM.listenForMessages = function(handler){
 
 
 XDM.isAllowedMethod = function(method){
-	var found = false;
-	for (var i = 0; i < XDM.allowedMethods.length; i++){
-		if (method.toString() === XDM.allowedMethods[i]){
-			found = true;
-			break;
-		}
-	}
-	return found;
+    if (typeof method == "undefined") {
+        return false;
+    }
+
+    var found = false;
+    for (var i = 0; i < XDM.allowedMethods.length; i++){
+        if (method.toString() === XDM.allowedMethods[i]){
+            found = true;
+            break;
+        }
+    }
+    return found;
 };
 
 
